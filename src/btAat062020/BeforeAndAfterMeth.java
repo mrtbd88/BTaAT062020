@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -28,7 +29,7 @@ public class BeforeAndAfterMeth {
 	public String passinLoc   ="//*[@id=\'pass\']";
 	
 
-	@BeforeMethod
+	@BeforeTest
 	public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mahfuj Tuhin\\eclipse-workspace\\KL22020\\drivers\\chromedriver.exe");
 		
@@ -58,12 +59,17 @@ public class BeforeAndAfterMeth {
 		
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void closeBrowser(){
 		System.out.println (" browser is about to close +++++++");
 		driver.close();
 		System.out.println (" browser is closed +++++++ ");
 	
+	}
+	@AfterSuite
+	public void tearDown(){
+		System.out.println (" Terminated WD +++++++ ");
+		driver.quit();
 	}
 
 }
