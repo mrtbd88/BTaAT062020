@@ -1,0 +1,10 @@
+package btAat062020;
+
+public class BeforeAndAfterMeth {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
